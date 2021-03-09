@@ -5,10 +5,10 @@
   <packaging>pom</packaging>
   <groupId>com.rbkmoney</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <name>RBKmoney parent</name>
-  <description>RBKmoney parent pom</description>
-  <url>https://github.com/rbkmoney/java-parent-pom</url>
+  <description>RBKmoney library parent pom</description>
+  <url>https://github.com/rbkmoney/library-parent-pom</url>
 
   <licenses>
     <license>
@@ -27,9 +27,9 @@
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/rbkmoney/java-parent-pom.git</connection>
-    <developerConnection>scm:git:ssh://github.com/rbkmoney/java-parent-pom.git</developerConnection>
-    <url>https://github.com/rbkmoney/java-parent-pom/tree/master</url>
+    <connection>scm:git:git://github.com/rbkmoney/library-parent-pom.git</connection>
+    <developerConnection>scm:git:ssh://github.com/rbkmoney/library-parent-pom.git</developerConnection>
+    <url>https://github.com/rbkmoney/library-parent-pom/tree/master</url>
   </scm>
 
   <properties>

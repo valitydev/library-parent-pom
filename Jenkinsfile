@@ -1,5 +1,5 @@
 #!groovy
-build('java-parent-pom', 'docker-host') {
+build('library-parent-pom', 'docker-host') {
     checkoutRepo()
     loadBuildUtils()
 
