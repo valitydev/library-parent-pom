@@ -5,7 +5,7 @@
   <packaging>pom</packaging>
   <groupId>com.rbkmoney</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <name>RBKmoney parent</name>
   <description>RBKmoney library parent pom</description>
   <url>https://github.com/rbkmoney/library-parent-pom</url>
@@ -43,6 +43,7 @@
     <pubStagingRepoId>ossrh</pubStagingRepoId>
     <pubStagingRepo>https://oss.sonatype.org/</pubStagingRepo>
     <checkstyle.config.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml</checkstyle.config.path>
+    <checkstyle.config.suppressions.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/checkstyle-suppressions.xml</checkstyle.config.suppressions.path>
   </properties>
 
   <profiles>
@@ -205,7 +206,14 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
-            <version>3.1.1</version>
+            <version>3.1.2</version>
+            <dependencies>
+              <dependency>
+                <groupId>com.puppycrawl.tools</groupId>
+                <artifactId>checkstyle</artifactId>
+                <version>8.41</version>
+              </dependency>
+            </dependencies>
             <executions>
               <execution>
                 <id>validate</id>
@@ -217,6 +225,7 @@
                   <consoleOutput>true</consoleOutput>
                   <violationSeverity>warning</violationSeverity>
                   <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                  <suppressionsLocation>${checkstyle.config.suppressions.path}</suppressionsLocation>
                 </configuration>
                 <goals>
                   <goal>check</goal>
@@ -245,8 +254,8 @@
               <artifactId>maven-compiler-plugin</artifactId>
               <version>3.8.1</version>
               <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
+                <source>${maven.compiler.source}</source>
+                <target>${maven.compiler.target}</target>
                 <encoding>UTF-8</encoding>
               </configuration>
             </plugin>
