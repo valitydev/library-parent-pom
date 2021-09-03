@@ -5,7 +5,7 @@
   <packaging>pom</packaging>
   <groupId>com.rbkmoney</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.6</version>
   <name>RBKmoney parent</name>
   <description>RBKmoney library parent pom</description>
   <url>https://github.com/rbkmoney/library-parent-pom</url>
@@ -33,8 +33,8 @@
   </scm>
 
   <properties>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>15</maven.compiler.source>
+    <maven.compiler.target>15</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pubRepoId>ossrh</pubRepoId>
     <pubRepo>https://oss.sonatype.org/content/repositories/releases</pubRepo>
