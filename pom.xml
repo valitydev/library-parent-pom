@@ -5,7 +5,7 @@
   <packaging>pom</packaging>
   <groupId>com.rbkmoney</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
   <name>RBKmoney parent</name>
   <description>RBKmoney library parent pom</description>
   <url>https://github.com/rbkmoney/library-parent-pom</url>
@@ -224,6 +224,9 @@
                   <failsOnError>true</failsOnError>
                   <consoleOutput>true</consoleOutput>
                   <violationSeverity>warning</violationSeverity>
+                  <sourceDirectories>
+                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                  </sourceDirectories>
                   <includeTestSourceDirectory>true</includeTestSourceDirectory>
                   <suppressionsLocation>${checkstyle.config.suppressions.path}</suppressionsLocation>
                 </configuration>
