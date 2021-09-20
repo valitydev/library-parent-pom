@@ -5,7 +5,7 @@
   <packaging>pom</packaging>
   <groupId>com.rbkmoney</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.8</version>
   <name>RBKmoney parent</name>
   <description>RBKmoney library parent pom</description>
   <url>https://github.com/rbkmoney/library-parent-pom</url>
@@ -42,6 +42,10 @@
     <pubSnapRepo>https://oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
     <pubStagingRepoId>ossrh</pubStagingRepoId>
     <pubStagingRepo>https://oss.sonatype.org/</pubStagingRepo>
+    <privRepoId>releases</privRepoId>
+    <privRepo>http://java-nexus.msk1.rbkmoney.net:8081/nexus/content/repositories/releases</privRepo>
+    <privSnapRepoId>snapshots</privSnapRepoId>
+    <privSnapRepo>http://java-nexus.msk1.rbkmoney.net:8081/nexus/content/repositories/snapshots</privSnapRepo>
     <checkstyle.config.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml</checkstyle.config.path>
     <checkstyle.config.suppressions.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/checkstyle-suppressions.xml</checkstyle.config.suppressions.path>
   </properties>
