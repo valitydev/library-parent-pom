@@ -3,12 +3,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <packaging>pom</packaging>
-  <groupId>com.rbkmoney</groupId>
+  <groupId>dev.vality</groupId>
   <artifactId>library-parent-pom</artifactId>
-  <version>1.0.8</version>
-  <name>RBKmoney parent</name>
-  <description>RBKmoney library parent pom</description>
-  <url>https://github.com/rbkmoney/library-parent-pom</url>
+  <version>1.0.0</version>
+  <name>Vality parent</name>
+  <description>Vality library parent pom</description>
+  <url>https://github.com/valitydev/library-parent-pom</url>
 
   <licenses>
     <license>
@@ -19,17 +19,16 @@
 
   <developers>
     <developer>
-      <name>Pavel Popov</name>
-      <email>p.popov@rbkmoney.com</email>
-      <organization>RBK.money</organization>
-      <organizationUrl>https://rbk.money</organizationUrl>
+      <email>devs@vality.dev</email>
+      <organization>Vality</organization>
+      <organizationUrl>https://vality.dev</organizationUrl>
     </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:git://github.com/rbkmoney/library-parent-pom.git</connection>
-    <developerConnection>scm:git:ssh://github.com/rbkmoney/library-parent-pom.git</developerConnection>
-    <url>https://github.com/rbkmoney/library-parent-pom/tree/master</url>
+    <connection>scm:git:git://github.com/valitydev/library-parent-pom.git</connection>
+    <developerConnection>scm:git:ssh://github.com/valitydev/library-parent-pom.git</developerConnection>
+    <url>https://github.com/valitydev/library-parent-pom/tree/master</url>
   </scm>
 
   <properties>
@@ -37,79 +36,18 @@
     <maven.compiler.target>15</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <pubRepoId>ossrh</pubRepoId>
-    <pubRepo>https://oss.sonatype.org/content/repositories/releases</pubRepo>
+    <pubRepo>https://s01.oss.sonatype.org/content/repositories/releases</pubRepo>
     <pubSnapRepoId>ossrh</pubSnapRepoId>
-    <pubSnapRepo>https://oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
+    <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
     <pubStagingRepoId>ossrh</pubStagingRepoId>
-    <pubStagingRepo>https://oss.sonatype.org/</pubStagingRepo>
-    <privRepoId>releases</privRepoId>
-    <privRepo>http://java-nexus.msk1.rbkmoney.net:8081/nexus/content/repositories/releases</privRepo>
-    <privSnapRepoId>snapshots</privSnapRepoId>
-    <privSnapRepo>http://java-nexus.msk1.rbkmoney.net:8081/nexus/content/repositories/snapshots</privSnapRepo>
-    <checkstyle.config.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml</checkstyle.config.path>
-    <checkstyle.config.suppressions.path>https://raw.githubusercontent.com/rbkmoney/java-checkstyle-config/master/conf/checkstyle-suppressions.xml</checkstyle.config.suppressions.path>
+    <pubStagingRepo>https://s01.oss.sonatype.org/</pubStagingRepo>
+    <checkstyle.config.path>https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml</checkstyle.config.path>
+    <checkstyle.config.suppressions.path>https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml</checkstyle.config.suppressions.path>
   </properties>
 
   <profiles>
     <profile>
-      <id>private</id>
-      <activation>
-        <property>
-          <name>env.MVN_PROFILE</name>
-          <value>private</value>
-        </property>
-      </activation>
-      <distributionManagement>
-        <snapshotRepository>
-          <id>${privSnapRepoId}</id>
-          <url>${privSnapRepo}</url>
-        </snapshotRepository>
-        <repository>
-          <id>${privRepoId}</id>
-          <url>${privRepo}</url>
-        </repository>
-      </distributionManagement>
-      <repositories>
-        <repository>
-          <id>${privRepoId}</id>
-          <url>${privRepo}</url>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </repository>
-        <repository>
-          <id>${privSnapRepoId}</id>
-          <url>${privSnapRepo}</url>
-          <releases>
-            <enabled>false</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-        <repository>
-          <id>${pubSnapRepoId}</id>
-          <url>${pubSnapRepo}</url>
-          <releases>
-            <enabled>false</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-        </repository>
-      </repositories>
-    </profile>
-    <profile>
-      <id>public</id>
-      <activation>
-        <property>
-          <name>env.MVN_PROFILE</name>
-          <value>public</value>
-        </property>
-      </activation>
+      <id>deploy</id>
       <distributionManagement>
         <snapshotRepository>
           <id>${pubSnapRepoId}</id>
@@ -137,7 +75,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.2.0</version>
+            <version>3.3.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -153,7 +91,7 @@
           <plugin>
             <groupId>org.sonatype.plugins</groupId>
             <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.7</version>
+            <version>1.6.8</version>
             <extensions>true</extensions>
             <configuration>
               <serverId>${pubStagingRepoId}</serverId>
@@ -161,22 +99,10 @@
               <autoReleaseAfterClose>${autoReleaseAfterClose}</autoReleaseAfterClose>
             </configuration>
           </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>sign</id>
-      <activation>
-        <property>
-          <name>env.MVN_PROFILE</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -185,7 +111,6 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
-                  <keyname>${gpg.keyname}</keyname>
                   <gpgArguments>
                     <arg>--pinentry-mode</arg>
                     <arg>loopback</arg>
