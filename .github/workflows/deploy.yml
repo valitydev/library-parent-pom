@@ -13,16 +13,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Checkout GitHub Action JDK Build Repo
-        uses: actions/checkout@v2
-        with:
-          repository: valitydev/action-deploy-jdk-package
-          ref: v1.0.4
-          token: '${{ secrets.ACTIONS_FETCH_TOKEN }}'
-          path: .github/actions/action-deploy-jdk-package
-
       - name: Deploy package
-        uses: ./.github/actions/action-deploy-jdk-package
+        uses: valitydev/action-deploy-jdk-package@v1.0.4
         with:
           server-username: ${{ secrets.OSSRH_USERNAME }}
           server-password: ${{ secrets.OSSRH_TOKEN }}
