@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>2.0.0.BETA</version>
+    <version>2.0.0.BETA-2</version>
     <name>Vality parent</name>
     <description>Vality library parent pom</description>
     <url>https://github.com/valitydev/library-parent-pom</url>
