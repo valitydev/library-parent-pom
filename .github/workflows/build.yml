@@ -7,4 +7,4 @@ on:
 
 jobs:
   build:
-    uses: valitydev/java-workflow/.github/workflows/maven-library-build.yml@experimental
+    uses: valitydev/java-workflow/.github/workflows/maven-library-build.yml@v2-beta
