@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>Vality parent</name>
     <description>Vality library parent pom</description>
     <url>https://github.com/valitydev/library-parent-pom</url>
@@ -80,7 +80,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.3.1</version>
+                        <version>3.4.1</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -96,7 +96,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>${pubStagingRepoId}</serverId>
@@ -140,12 +140,12 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.1.2</version>
+                        <version>3.2.0</version>
                         <dependencies>
                             <dependency>
                                 <groupId>com.puppycrawl.tools</groupId>
                                 <artifactId>checkstyle</artifactId>
-                                <version>9.2.1</version>
+                                <version>9.3</version>
                             </dependency>
                         </dependencies>
                         <executions>
@@ -186,7 +186,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.7</version>
+                        <version>0.8.8</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -208,7 +208,7 @@
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-compiler-plugin</artifactId>
-                            <version>3.9.0</version>
+                            <version>3.10.1</version>
                             <configuration>
                                 <source>${maven.compiler.source}</source>
                                 <target>${maven.compiler.target}</target>
