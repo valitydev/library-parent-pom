@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>Vality parent</name>
     <description>Vality library parent pom</description>
     <url>https://github.com/valitydev/library-parent-pom</url>
@@ -145,7 +145,7 @@
                             <dependency>
                                 <groupId>com.puppycrawl.tools</groupId>
                                 <artifactId>checkstyle</artifactId>
-                                <version>9.3</version>
+                                <version>10.6.0</version>
                             </dependency>
                         </dependencies>
                         <executions>
