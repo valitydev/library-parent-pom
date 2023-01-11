@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>Vality parent</name>
     <description>Vality library parent pom</description>
     <url>https://github.com/valitydev/library-parent-pom</url>
@@ -140,7 +140,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-checkstyle-plugin</artifactId>
-                        <version>3.2.0</version>
+                        <version>3.2.1</version>
                         <dependencies>
                             <dependency>
                                 <groupId>com.puppycrawl.tools</groupId>
