@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    reviewers:
+      - "AydarN"
+    labels:
+      - "depcheck"
+    target-branch: "master"
