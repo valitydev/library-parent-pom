@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "12:00"
+      timezone: "Europe/London"
+    reviewers:
+      - "AydarN"
+    labels:
+      - "depcheck"
+    target-branch: "master"
+    open-pull-requests-limit: 5
