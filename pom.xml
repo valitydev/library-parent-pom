@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.2</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -50,6 +50,7 @@
         <checkstyle.config.suppressions.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
         </checkstyle.config.suppressions.path>
+        <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
     </properties>
 
     <profiles>
@@ -104,6 +105,7 @@
                             <serverId>${pubStagingRepoId}</serverId>
                             <nexusUrl>${pubStagingRepo}</nexusUrl>
                             <autoReleaseAfterClose>${autoReleaseAfterClose}</autoReleaseAfterClose>
+                            <stagingProgressTimeoutMinutes>${stagingProgressTimeoutMinutes}</stagingProgressTimeoutMinutes>
                         </configuration>
                     </plugin>
                     <plugin>
