@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -45,7 +45,7 @@
         <pubStagingRepoId>ossrh</pubStagingRepoId>
         <pubStagingRepo>https://s01.oss.sonatype.org/</pubStagingRepo>
         <checkstyle.config.path>
-            https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml
+            https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/valitydev_google_checkstyle.xml
         </checkstyle.config.path>
         <checkstyle.config.suppressions.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
@@ -149,7 +149,7 @@
                             <dependency>
                                 <groupId>com.puppycrawl.tools</groupId>
                                 <artifactId>checkstyle</artifactId>
-                                <version>10.21.3</version>
+                                <version>10.23.1</version>
                             </dependency>
                         </dependencies>
                         <executions>
@@ -158,7 +158,6 @@
                                 <phase>validate</phase>
                                 <configuration>
                                     <configLocation>${checkstyle.config.path}</configLocation>
-                                    <encoding>UTF-8</encoding>
                                     <failsOnError>true</failsOnError>
                                     <consoleOutput>true</consoleOutput>
                                     <violationSeverity>warning</violationSeverity>
@@ -190,7 +189,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.12</version>
+                        <version>0.8.13</version>
                         <executions>
                             <execution>
                                 <goals>
