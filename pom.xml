@@ -44,8 +44,13 @@
         <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
         <pubStagingRepoId>ossrh</pubStagingRepoId>
         <pubStagingRepo>https://s01.oss.sonatype.org/</pubStagingRepo>
+        <checkstyle.config.path>
+            https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/rbkmoney_google_checkstyle.xml
+        </checkstyle.config.path>
+        <checkstyle.config.suppressions.path>
+            https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
+        </checkstyle.config.suppressions.path>
         <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
-        <spotless.skip>false</spotless.skip>
     </properties>
 
     <profiles>
@@ -137,30 +142,37 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.diffplug.spotless</groupId>
-                        <artifactId>spotless-maven-plugin</artifactId>
-                        <version>2.44.4</version>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <version>3.6.0</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>com.puppycrawl.tools</groupId>
+                                <artifactId>checkstyle</artifactId>
+                                <version>10.21.3</version>
+                            </dependency>
+                        </dependencies>
                         <executions>
                             <execution>
-                                <id>spotless-check</id>
+                                <id>validate</id>
                                 <phase>validate</phase>
+                                <configuration>
+                                    <configLocation>${checkstyle.config.path}</configLocation>
+                                    <encoding>UTF-8</encoding>
+                                    <failsOnError>true</failsOnError>
+                                    <consoleOutput>true</consoleOutput>
+                                    <violationSeverity>warning</violationSeverity>
+                                    <sourceDirectories>
+                                        <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                                    </sourceDirectories>
+                                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                                    <suppressionsLocation>${checkstyle.config.suppressions.path}</suppressionsLocation>
+                                </configuration>
                                 <goals>
                                     <goal>check</goal>
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <skip>${spotless.skip}</skip>
-                            <java>
-                                <googleJavaFormat>
-                                    <version>1.26.0</version>
-                                </googleJavaFormat>
-                                <importOrder>
-                                    <order>java|javax|dev|com|org|lombok</order>
-                                </importOrder>
-                                <removeUnusedImports/>
-                            </java>
-                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
