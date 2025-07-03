@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -39,11 +39,11 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pubRepoId>ossrh</pubRepoId>
-        <pubRepo>https://s01.oss.sonatype.org/content/repositories/releases</pubRepo>
+        <pubRepo>https://ossrh-staging-api.central.sonatype.com/content/repositories/releases</pubRepo>
         <pubSnapRepoId>ossrh</pubSnapRepoId>
-        <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
+        <pubSnapRepo>https://ossrh-staging-api.central.sonatype.com/content/repositories/snapshots</pubSnapRepo>
         <pubStagingRepoId>ossrh</pubStagingRepoId>
-        <pubStagingRepo>https://s01.oss.sonatype.org/</pubStagingRepo>
+        <pubStagingRepo>https://ossrh-staging-api.central.sonatype.com</pubStagingRepo>
         <checkstyle.config.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/valitydev_google_checkstyle.xml
         </checkstyle.config.path>
@@ -111,7 +111,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.7</version>
+                        <version>3.2.8</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -149,7 +149,7 @@
                             <dependency>
                                 <groupId>com.puppycrawl.tools</groupId>
                                 <artifactId>checkstyle</artifactId>
-                                <version>10.23.1</version>
+                                <version>10.26.1</version>
                             </dependency>
                         </dependencies>
                         <executions>
