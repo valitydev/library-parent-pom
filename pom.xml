@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.2224</version>
+    <version>3.0.2225</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -52,6 +52,29 @@
         </checkstyle.config.suppressions.path>
         <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.7.1</version>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>oss</flattenMode>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
@@ -216,24 +239,6 @@
                                 <source>${maven.compiler.source}</source>
                                 <target>${maven.compiler.target}</target>
                                 <encoding>UTF-8</encoding>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>flatten-maven-plugin</artifactId>
-                            <version>1.7.1</version>
-                            <executions>
-                                <execution>
-                                    <id>flatten</id>
-                                    <phase>process-resources</phase>
-                                    <goals>
-                                        <goal>flatten</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                            <configuration>
-                                <updatePomFile>true</updatePomFile>
-                                <flattenMode>oss</flattenMode>
                             </configuration>
                         </plugin>
                     </plugins>
