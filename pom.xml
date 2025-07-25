@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.2</version>
+    <version>3.0.2222</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -39,9 +39,9 @@
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <pubRepoId>ossrh</pubRepoId>
-        <pubRepo>https://ossrh-staging-api.central.sonatype.com/content/repositories/releases</pubRepo>
+        <pubRepo>https://s01.oss.sonatype.org/content/repositories/releases</pubRepo>
         <pubSnapRepoId>ossrh</pubSnapRepoId>
-        <pubSnapRepo>https://ossrh-staging-api.central.sonatype.com/content/repositories/snapshots</pubSnapRepo>
+        <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
         <pubStagingRepoId>ossrh</pubStagingRepoId>
         <pubStagingRepo>https://ossrh-staging-api.central.sonatype.com</pubStagingRepo>
         <checkstyle.config.path>
@@ -127,6 +127,24 @@
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                        <version>1.7.1</version>
+                        <executions>
+                            <execution>
+                                <id>flatten</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>flatten</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <updatePomFile>true</updatePomFile>
+                            <flattenMode>oss</flattenMode>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
