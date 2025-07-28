@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.2228</version>
+    <version>3.0.2229</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -42,15 +42,12 @@
         <pubRepo>https://s01.oss.sonatype.org/content/repositories/releases</pubRepo>
         <pubSnapRepoId>ossrh</pubSnapRepoId>
         <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
-        <pubStagingRepoId>ossrh</pubStagingRepoId>
-        <pubStagingRepo>https://ossrh-staging-api.central.sonatype.com</pubStagingRepo>
         <checkstyle.config.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/valitydev_google_checkstyle.xml
         </checkstyle.config.path>
         <checkstyle.config.suppressions.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
         </checkstyle.config.suppressions.path>
-        <stagingProgressTimeoutMinutes>30</stagingProgressTimeoutMinutes>
     </properties>
 
     <profiles>
@@ -95,18 +92,6 @@
                                 </configuration>
                             </execution>
                         </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.7.0</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>${pubStagingRepoId}</serverId>
-                            <nexusUrl>${pubStagingRepo}</nexusUrl>
-                            <autoReleaseAfterClose>${autoReleaseAfterClose}</autoReleaseAfterClose>
-                            <stagingProgressTimeoutMinutes>${stagingProgressTimeoutMinutes}</stagingProgressTimeoutMinutes>
-                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
