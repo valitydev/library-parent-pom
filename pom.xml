@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.2229</version>
+    <version>3.0.22299</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -38,10 +38,6 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <pubRepoId>ossrh</pubRepoId>
-        <pubRepo>https://s01.oss.sonatype.org/content/repositories/releases</pubRepo>
-        <pubSnapRepoId>ossrh</pubSnapRepoId>
-        <pubSnapRepo>https://s01.oss.sonatype.org/content/repositories/snapshots</pubSnapRepo>
         <checkstyle.config.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/valitydev_google_checkstyle.xml
         </checkstyle.config.path>
