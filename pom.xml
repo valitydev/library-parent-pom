@@ -44,7 +44,7 @@
         <checkstyle.config.suppressions.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
         </checkstyle.config.suppressions.path>
-        <flatten.skip>false</flatten.skip>
+        <flatten.skip>true</flatten.skip>
     </properties>
 
     <profiles>
