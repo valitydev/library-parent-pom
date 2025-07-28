@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>3.0.3</version>
+    <version>3.0.3111</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -44,9 +44,22 @@
         <checkstyle.config.suppressions.path>
             https://raw.githubusercontent.com/valitydev/java-checkstyle-config/master/conf/checkstyle-suppressions.xml
         </checkstyle.config.suppressions.path>
+        <flatten.skip>false</flatten.skip>
     </properties>
 
     <profiles>
+        <profile>
+            <id>disable-flatten-for-parent</id>
+            <activation>
+                <property>
+                    <name>project.artifactId</name>
+                    <value>library-parent-pom</value>
+                </property>
+            </activation>
+            <properties>
+                <flatten.skip>true</flatten.skip>
+            </properties>
+        </profile>
         <profile>
             <id>deploy</id>
             <build>
@@ -120,7 +133,8 @@
                         </executions>
                         <configuration>
                             <updatePomFile>true</updatePomFile>
-                            <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                            <flattenMode>ossrh</flattenMode>
+                            <skip>${flatten.skip}</skip>
                         </configuration>
                     </plugin>
                 </plugins>
