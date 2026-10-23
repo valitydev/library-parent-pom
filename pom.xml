@@ -6,7 +6,7 @@
 
     <groupId>dev.vality</groupId>
     <artifactId>library-parent-pom</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <packaging>pom</packaging>
 
     <name>Vality parent</name>
@@ -66,7 +66,7 @@
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
-                        <version>0.10.0</version>
+                        <version>0.12.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>ossrh</publishingServerId>
